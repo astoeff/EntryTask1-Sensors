@@ -13,7 +13,6 @@ import static java.lang.Math.abs;
 import static java.lang.Math.pow;
 
 public class Main {
-
     public static String readInputFileName(Scanner in) {
         System.out.println("Filename: ");
         String inputFileName = in.nextLine();
@@ -49,8 +48,7 @@ public class Main {
     }
 
     public static void checkSensorsFromFile(String fileName, int distance, int maxError) throws IOException {
-        File file =
-                new File(fileName);
+        File file = new File(fileName);
         Scanner sc = new Scanner(file);
         String line = new String();
         Path path = Paths.get(fileName);
@@ -72,22 +70,22 @@ public class Main {
                 }
             }
         }
-        if(dotNumber==0){
+        if (dotNumber == 0) {
             System.out.println("No sensors to be checked! Please, add sensors to the file!");
             return;
         }
-        int numberOfBrokenSensors=0;
+        int numberOfBrokenSensors = 0;
         System.out.print("Please check sensors at: ");
         for (int i = 0; i < sensorsToCheck.length; i++) {
             if (sensorsToCheck[i] == 1) {
-                if(numberOfBrokenSensors>0){
+                if (numberOfBrokenSensors > 0) {
                     System.out.print(", ");
                 }
                 sensors[i].printDotInfo();
                 numberOfBrokenSensors++;
             }
         }
-        if(numberOfBrokenSensors==0){
+        if (numberOfBrokenSensors == 0) {
             System.out.println("All sensors seem to be correct!");
         }
     }

@@ -9,10 +9,10 @@ public class Dot {
         this.value = value;
     }
 
-    public Dot(String[] values){
-        x_coordinate=Integer.parseInt(values[0]);
-        y_coordinate=Integer.parseInt(values[1]);
-        value=Integer.parseInt(values[2]);
+    public Dot(String[] values) {
+        x_coordinate = Integer.parseInt(values[0]);
+        y_coordinate = Integer.parseInt(values[1]);
+        value = Integer.parseInt(values[2]);
     }
 
     public int getX_coordinate() {
@@ -27,10 +27,9 @@ public class Dot {
         return value;
     }
 
-    public void printDotInfo(){
-        System.out.print("("+x_coordinate+",");
-        System.out.print(y_coordinate+")");
-        //System.out.print(value);
+    public void printDotInfo() {
+        System.out.print("(" + x_coordinate + ",");
+        System.out.print(y_coordinate + ")");
     }
 
     @Override
@@ -39,9 +38,7 @@ public class Dot {
         if (!(obj instanceof Dot)) {
             return false;
         }
-
         Dot dot = (Dot) obj;
-
         return dot.x_coordinate == x_coordinate &&
                 dot.y_coordinate == y_coordinate &&
                 dot.value == value;
